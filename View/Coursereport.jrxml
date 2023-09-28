@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="596" pageHeight="837" columnWidth="556" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6894aea7-3095-453d-b31a-9e3d7173430b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT  Cname,Cduration,Sname,Email FROM  student,course WHERE student.Course=course.Cname;]]>
+	</queryString>
+	<field name="Cname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cduration" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Sname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Cname">
+		<groupExpression><![CDATA[$F{Cname}]]></groupExpression>
+		<groupHeader>
+			<band height="64">
+				<textField>
+					<reportElement style="SubTitle" x="185" y="0" width="185" height="24" forecolor="#006600" uuid="fa815bfa-d8fc-431f-8638-0fb424b65fc0"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Cname}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" x="185" y="24" width="185" height="26" uuid="7d3b96bc-9905-40b2-bcf3-62d778188035"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<text><![CDATA[Student  Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="371" y="24" width="185" height="26" uuid="2d2564cd-8ff0-4469-9edf-2000f4d6657b"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<text><![CDATA[Email]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="0" y="24" width="185" height="26" uuid="d130288b-96f1-4ed1-bc6a-10d2f8b5c142"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<text><![CDATA[Course Duration]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="51"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="98" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="34" y="0" width="361" height="33" uuid="626c52eb-b1c7-4b78-94dc-93fa24ac4efa"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Student Management Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="421" y="0" width="135" height="70" uuid="0abc75be-c084-4f66-b8a8-86b30fe538e5"/>
+				<imageExpression><![CDATA["C:\\Users\\niman\\OneDrive\\Desktop\\EAD CourseWork\\student-management-system.png"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="421" y="78" width="130" height="20" uuid="4fdb53e4-f54b-4715-b5ed-4b098c2840b0"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="33" width="126" height="37" uuid="a151b698-e55b-45df-956e-7180d6841ebf"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Course     Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="9c9e58cf-8a72-4074-9e68-b5f0d57359cc"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="1552388a-a33e-4bf8-9d27-77613d96f65b"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="185" height="15" uuid="ef22806b-085e-4837-88e7-dba29d75ee68"/>
+				<textFieldExpression><![CDATA[$F{Cduration}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="370" y="0" width="185" height="15" uuid="d2068308-8f4e-4d86-9299-860c793cb37f"/>
+				<textFieldExpression><![CDATA[$F{Email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="185" y="0" width="185" height="15" uuid="f045165c-110f-45bb-9e49-03eb8016cf9a"/>
+				<textFieldExpression><![CDATA[$F{Sname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="40" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="7d7d6f6a-f82c-4e83-ab7c-fa2ba6143713"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="68e4345e-d108-48cb-9590-1914cfad5d4e"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="6b479543-1367-441e-8a48-2171856e45ce"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
